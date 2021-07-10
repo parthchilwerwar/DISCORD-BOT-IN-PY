@@ -244,6 +244,8 @@ async def lock(ctx):
     embed = discord.Embed(description = ctx.channel.mention + "```went under lockdown mode 🔒 ```",color = 0x3bbf45)
     msg = await ctx.send(embed = embed)
     await msg.add_reaction("✅")
+    await ctx.message.delete()
+    
     
 
 @client.command()
@@ -254,6 +256,7 @@ async def unlock(ctx):
     embed = discord.Embed(description = ctx.channel.mention + "```Has removed the lockdown mode 🔓```" , color = 0x3bbf45)
     msg = await ctx.send(embed = embed) 
     await msg.add_reaction("✅")
+    await ctx.message.delete()
     
 
 

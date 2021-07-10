@@ -14,7 +14,6 @@ from io import BytesIO
 
 
 client = commands.Bot(command_prefix='k~')
-client.launch_time = datetime.utcnow()
 client.remove_command('help')
 api_key = "6beb4cf35bb9797f16db57512aaa1307"
 base_url = "http://api.openweathermap.org/data/2.5/weather?"

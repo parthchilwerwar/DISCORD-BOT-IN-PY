@@ -257,7 +257,7 @@ async def avatar(ctx,*, member: discord.Member=None):
 		member = ctx.message.author
 	userAvatar = member.avatar_url
 
-	embed = discord.Embed(description = timpestamp = ctx.message.created_at,color = 0xE500FF)
+	embed = discord.Embed(description = timestamp = ctx.message.created_at,color = 0xE500FF)
 	embed.set_author(name = f"Avatar of {member}")
 	embed.set_image(url = member.avatar_url)
 	embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url = ctx.author.avatar_url)

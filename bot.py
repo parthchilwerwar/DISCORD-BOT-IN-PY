@@ -592,7 +592,8 @@ async def weather(ctx, *, city: str):
             embed.set_footer(text=f"Requested by {ctx.author.name}")
             await channel.send(embed=embed)
     elif not x["cod"] != "404":
-        await channel.send("City not found.")
+    	embed = discord.Embed(description="The following city was not found `due to wrong citie name` ")
+        await channel.send(embed=embed)
 
 
 

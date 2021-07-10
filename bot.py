@@ -58,7 +58,7 @@ async def help(ctx):
 	async with ctx.typing():
 		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xff0800)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`",inline = False)
-		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`",inline = False)
+		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`",inline = False)
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
 		embed.add_field(name = "😀 | FUN", value = "`meme`",inline = False)
 		embed.add_field(name = "ℹ️ | INFORMATION", value = "`serverinfo`,`userinfo`",inline = False)
@@ -126,6 +126,14 @@ async def meme(ctx):
 	embed = discord.Embed(title="MEME",description="use this command to create random meme", color = discord.Color.random())
 
 	embed.add_field(name ="**command**", value = "k~meme")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def  weather(ctx):
+	embed = discord.Embed(title="Weather",description="use this command to know the weather of any `city in the world`", color = discord.Color.random())
+
+	embed.add_field(name ="**command**", value = "k~weather , example: k~weather (`city name`)")
 
 	await ctx.send(embed = embed)
 

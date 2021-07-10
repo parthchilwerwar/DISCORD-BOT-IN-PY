@@ -194,7 +194,7 @@ async def jack(ctx):
     async with ctx.typing():
         # do expensive stuff here
         await asyncio.sleep(10)
-    await ctx.send('done!')
+    await ctx.send('done')
 	
 @client.command()
 async def ping(ctx):

@@ -454,9 +454,9 @@ async def truth(ctx):
     await ctx.send(embed = embed)
 
 
-@client.command(aliases=['d'])
+@client.command(aliases=["d"])
 async def dare(ctx):
-	dare_list = ["Serenade the person to your right.,"
+	dares = ["Serenade the person to your right.",
 		"Kiss the person to your left.",
 		"Attempt to do a magic trick.",
 		"Do four cartwheels in row.",
@@ -558,7 +558,7 @@ async def dare(ctx):
 		"Try to lick your elbow for the next three minutes.",
 		"Laugh out loud at everything the person to your left says until it’s your turn.",
 		"Stand up and try to break dance."]
-	embed = discord.Embed(description=f"{random.choice(dare_list)}")
+	embed = discord.Embed(description= f"{random.choice(dares)}")
 	await ctx.send(embed = embed)
 
 

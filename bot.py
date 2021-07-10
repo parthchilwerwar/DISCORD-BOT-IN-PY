@@ -460,6 +460,21 @@ async def dare(ctx):
 	embed = discord.Embed(description=f"{random.choice(dare_list)}")
 	await ctx.send(embed = embed)
 
+
+@client.command()
+async def ticketcreate(ctx):
+	embed = discord.Embed(color = 0xb2f3ff)
+	embed.set_author(name = "Ticket",value = )
+	embed.add_field(name ="React to emoji",value = "Just click on ticket eomji to make your ticket ready")
+	embed.set_footer(text=f"Requested by {ctx.author.name}")
+
+	emoji = "🎫"
+	await ctx.message.delete()
+	message = await.ctx.send(embed = embed)
+	await message.add_reaction(emoji = emoji)
+
+
+
 #music commands
 
 

@@ -578,13 +578,13 @@ async def truth(ctx):
 
 @client.command()
 async def weather(ctx, *, city: str):
-	async with channel.typing():
     city_name = city
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
     response = requests.get(complete_url)
     x = response.json()
     channel = ctx.message.channel
     if x["cod"] != "404":
+    	async with channel.typing():
             y = x["main"]
             current_temperature = y["temp"]
             current_temperature_celsiuis: str = str(round(current_temperature - 273.15))

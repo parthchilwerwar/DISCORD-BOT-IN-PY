@@ -582,13 +582,13 @@ async def weather(ctx, *, city: str):
             z = x["weather"]
             weather_description = z[0]["description"]
             embed = discord.Embed(title=f"Weather in {city_name}",
-                                  color=ctx.guild.me.top_role.color,
+                                  color= 0x55e4ff,
                                   timestamp=ctx.message.created_at, )
             embed.add_field(name="Descripition", value=f"**{weather_description}**", inline=False)
             embed.add_field(name="Temperature(C)", value=f"**{current_temperature_celsiuis}°C**", inline=False)
             embed.add_field(name="Humidity(%)", value=f"**{current_humidity}%**", inline=False)
             embed.add_field(name="Atmospheric Pressure(hPa)", value=f"**{current_pressure}hPa**", inline=False)
-            embed.set_thumbnail(url="https://i.ibb.co/CMrsxdX/weather.png")
+            embed.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR3h_gwYzhHV9_yJj9tnPLomfRqF2iWLlyKSi4V1eZdFBP7N8KnrAjPeUAv0Ir0T-lPqtMo-xNSiw&usqp=CAU")
             embed.set_footer(text=f"Requested by {ctx.author.name}")
             await channel.send(embed=embed)
     elif not x["cod"] != "404":

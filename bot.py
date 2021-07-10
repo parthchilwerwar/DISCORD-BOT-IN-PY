@@ -593,8 +593,8 @@ async def weather(ctx, *, city: str):
             await channel.send(embed=embed)
     elif not x["cod"] != "404":
     	embed = discord.Embed(description="The following city was not found `due to wrong citie name` ")
-        await channel.send(embed=embed)
-
+    	await channel.send(embed=embed)
+       
 
 
 

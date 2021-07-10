@@ -213,22 +213,6 @@ async def uptime(self ,ctx):
 
 
 @client.command()
-async def hacked(ctx):
-    async with ctx.typing():
-        # do expensive stuff here
-        await asyncio.sleep(10)
-    await ctx.send('done')
-	
-
-
-@client.command()
-async def jack(ctx):
-    async with ctx.typing():
-        # do expensive stuff here
-        await asyncio.sleep(10)
-    await ctx.send('done')
-	
-@client.command()
 async def ping(ctx):
 	embed = discord.Embed(description = f"ping : {round(client.latency * 100, 2)} ms",color = discord.Color.green())
 	embed.set_footer(text=f"Requested by  {ctx.author.name}",icon_url = ctx.author.avatar_url)

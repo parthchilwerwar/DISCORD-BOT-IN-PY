@@ -464,7 +464,7 @@ async def dare(ctx):
 @client.command()
 async def ticketcreate(ctx):
 	embed = discord.Embed(color = 0xb2f3ff)
-	embed.set_author(name = "Ticket",value = )
+	embed.set_author(name = "Ticket")
 	embed.add_field(name ="React to emoji",value = "Just click on ticket eomji to make your ticket ready")
 	embed.set_footer(text=f"Requested by {ctx.author.name}")
 

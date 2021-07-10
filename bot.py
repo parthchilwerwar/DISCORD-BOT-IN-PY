@@ -213,6 +213,15 @@ async def uptime(self ,ctx):
 
 
 @client.command()
+async def hacked(ctx):
+    async with ctx.typing():
+        # do expensive stuff here
+        await asyncio.sleep(10)
+    await ctx.send('done')
+	
+
+
+@client.command()
 async def jack(ctx):
     async with ctx.typing():
         # do expensive stuff here

@@ -603,7 +603,7 @@ async def weather(ctx, *, city: str):
             embed.set_footer(text=f"Requested by {ctx.author.name}")
             await channel.send(embed=embed)
     elif not x["cod"] != "404":
-    	embed = discord.Embed(description="The following city was not found `due to wrong citie name` ")
+    	embed = discord.Embed(description="The following city was not found `due to wrong spelling of city` ")
     	await ctx.message.delete()
     	await asyncio.sleep(1)
     	await channel.send(embed=embed)

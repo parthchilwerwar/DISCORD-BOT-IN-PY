@@ -55,7 +55,7 @@ async def help(ctx):
 		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xff0800)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`",inline = False)
 		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`",inline = False)
-		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare`(td)",inline = False)
+		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
 		embed.add_field(name = "😀 | FUN", value = "`meme`",inline = False)
 		embed.add_field(name = "ℹ️ | INFORMATION", value = "`serverinfo`,`userinfo`",inline = False)
 		embed.add_field(name = "Link", value = "[invite](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot) ",inline = False)

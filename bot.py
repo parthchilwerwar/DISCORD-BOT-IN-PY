@@ -323,7 +323,7 @@ async def nickname(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
     embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed")
     await ctx.send(embed = embed)
-    await on_message_delete()
+    await ctx.message.delete()
     
 
 
@@ -604,6 +604,7 @@ async def weather(ctx, *, city: str):
             await channel.send(embed=embed)
     elif not x["cod"] != "404":
     	embed = discord.Embed(description="The following city was not found `due to wrong citie name` ")
+    	await ctx.message.delete()
     	await asyncio.sleep(1)
     	await channel.send(embed=embed)
        

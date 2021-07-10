@@ -470,7 +470,7 @@ async def ticketcreate(ctx):
 
 	emoji = "🎫"
 	await ctx.message.delete()
-	message = await.ctx.send(embed = embed)
+	message = await ctx.send(embed = embed)
 	await message.add_reaction(emoji = emoji)
 
 

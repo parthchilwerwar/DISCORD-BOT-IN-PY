@@ -73,7 +73,7 @@ async def help(ctx):
 async def clean(ctx):
 	embed = discord.Embed(title="clean",description="Use this Command to clear messages",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~clean (ammount of number)")
+	embed.add_field(name ="**command**", value = "k~clean (ammount of number) or else will delete 2 messages")
 
 	await ctx.send(embed = embed)
 

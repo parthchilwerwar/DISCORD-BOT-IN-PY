@@ -333,7 +333,7 @@ async def userinfo(ctx, member: discord.Member = None):
 @commands.has_permissions(kick_members =True)
 async def nickname(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
-    embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed")
+    embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed",color = 0xF8E3EC)
     await ctx.send(embed = embed)
     await ctx.message.delete()
     

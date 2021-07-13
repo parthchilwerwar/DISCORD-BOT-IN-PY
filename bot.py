@@ -56,14 +56,15 @@ async def snipe(ctx):
 @client.group(invoke_without_command=True)
 async def help(ctx):
 	async with ctx.typing():
-		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xff0800)
+		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xF8E3EC)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`",inline = False)
-		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`",inline = False)
+		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
-		embed.add_field(name = "😀 | FUN", value = "`meme`",inline = False)
+		embed.add_field(name = "😀 | FUN", value = "`meme`")
 		embed.add_field(name = "ℹ️ | INFORMATION", value = "`serverinfo`,`userinfo`",inline = False)
 		embed.add_field(name = "Link", value = "[invite](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot) ",inline = False)
 		embed.set_footer(text = f"Requested by  '{ctx.author.name}'",icon_url = ctx.author.avatar_url)
+		embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/834029114536493066/a9f7b1a90f23509c21f46b7312c64e07.webp?size=1024")
 		await asyncio.sleep(2)
 
 	await ctx.send(embed=embed)

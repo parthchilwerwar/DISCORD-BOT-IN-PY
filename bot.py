@@ -343,7 +343,7 @@ async def nickname(ctx, member: discord.Member, nick):
 @commands.has_permissions(kick_members=True)
 async def poll(ctx,*,question):
     await ctx.channel.purge(limit=1)
-    embed = discord.Embed(description =f"{question}\n\n\n✅ = Yes\n❎ = No",colour = 0xFFF474)
+    embed = discord.Embed(description =f"{question}\n✅ = Yes\n❎ = No",colour = 0xFFF474)
     message = await ctx.send(embed = embed)
     await message.add_reaction('✅')
     await message.add_reaction('❎')

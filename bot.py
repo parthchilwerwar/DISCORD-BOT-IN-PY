@@ -342,7 +342,7 @@ async def nickname(ctx, member: discord.Member, nick):
 @commands.has_permissions(kick_members=True)
 async def poll(ctx,*,question):
     await ctx.channel.purge(limit=1)
-    embed = discord.Embed(description =f"```{question}```\n✅ = Yes\n❎ = No",colour = 0xFFF474)
+    embed = discord.Embed(description =f"{question}\n✅ = Yes\n❎ = No",colour = 0xFFF474)
     message = await ctx.send(embed = embed)
     await message.add_reaction('✅')
     await message.add_reaction('❎')
@@ -582,7 +582,21 @@ async def truth(ctx):
 		"What’s the longest you’ve ever had an overdue library book ?",
 		"Would you eat a piece of pizza out of the trash ?",
 		"Have you ever thrown up on a roller coaster ?",
-		"Have you ever blamed your fart on someone else ?"]
+		"Have you ever blamed your fart on someone else ?",
+		
+
+
+
+
+
+
+
+
+
+
+
+
+		]
     embed = discord.Embed(description =f"{random.choice(truth_list)}")
     await ctx.send(embed = embed)
 
@@ -623,6 +637,7 @@ async def weather(ctx, *, city: str):
 
 
 #music commands
+
 
 
 

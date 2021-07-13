@@ -315,7 +315,7 @@ async def userinfo(ctx, member: discord.Member = None):
 
     roles = [str(role.mention) for role in member.roles][1:]
     
-    embed = discord.Embed(colour=0x3bbf45, timestamp=ctx.message.created_at,title=f"User Info - {member}")
+    embed = discord.Embed(colour=0xffdf00, timestamp=ctx.message.created_at,title=f"User Info - {member}")
     embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(text=f"Requested by {ctx.author}")
     embed.add_field(name="ID:", value=member.id,inline =False)
@@ -453,7 +453,7 @@ async def dare(ctx):
 		"Try to lick your elbow for the next three minutes.",
 		"Laugh out loud at everything the person to your left says until it’s your turn.",
 		"Stand up and try to break dance."]
-	embed = discord.Embed(description=f"{random.choice(dares)}")
+	embed = discord.Embed(description=f"{random.choice(dares)}",color =0xF8E3EC)
 	await ctx.send(embed = embed)
 
 
@@ -598,7 +598,7 @@ async def truth(ctx):
 
 
 		]
-    embed = discord.Embed(description =f"{random.choice(truth_list)}")
+    embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xF8E3EC)
     await ctx.send(embed = embed)
 
 

@@ -634,15 +634,81 @@ async def weather(ctx, *, city: str):
     	await asyncio.sleep(1)
     	await channel.send(embed=embed)
        
+#fun commands
+
+@client.command(aliases=["k"])
+async def kiss(ctx):
+
+    kiss =[
+    "https://media1.giphy.com/media/kU586ictpGb0Q/giphy.gif?cid=ecf05e478364xmyyaif02ureji086b3ls6lzpqhpk666lh0g&rid=giphy.gif&ct=g", 
+    "https://media1.giphy.com/media/zkppEMFvRX5FC/giphy.gif?cid=ecf05e47aswq2rkl87iqpswtn7rpthceezksgmhl5mdi9iua&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/bm2O3nXTcKJeU/giphy.gif?cid=ecf05e47ou3d5q96rn8h9xkgumigf1v80ozfcdcl30imy3d1&rid=giphy.gif&ct=g", 
+    "https://media1.giphy.com/media/jR22gdcPiOLaE/giphy.gif?cid=ecf05e47vty3hv8rp5an2fqnt3851wtncoqm6ebkhmwm2cpy&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/Ka2NAhphLdqXC/giphy.gif?cid=ecf05e47tyhvmlb1l8b6u7lclh4opg60evfvzz1a1t1hafn0&rid=giphy.gif&ct=g",
+    "https://media1.giphy.com/media/bm2O3nXTcKJeU/giphy.gif?cid=ecf05e47f6ujv7jsrwcn998lrl1y7kfvhh835fasd215x5il&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/nyGFcsP0kAobm/giphy.gif?cid=ecf05e47037uw2euh7q6txd13zhgu369516yh8k32t792dyz&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/AZSjToDmW19WU/giphy.gif?cid=ecf05e47h3kil4tedh89v5jtmnlyn85xad07v1sypi5dg5hx&rid=giphy.gif&ct=g",
+    "https://media1.giphy.com/media/JYpVJEcNrDAWc/giphy.gif?cid=ecf05e471od5itckugvl6dm8f7rgas4zsqxcbv499furk6sy&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/w9xag7QUzLgLC/giphy.gif?cid=ecf05e477brcf2ak15okjs7b62z6gs79wp06rrszldhkqgdb&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/H8XZI3PJm258c/giphy.gif?cid=ecf05e471ok5vo6cegt8thwq48fq68xo2brskturmws0ivjx&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/VXsUx3zjzwMhi/giphy.gif?cid=ecf05e47ebfupjgmiogjsqzfunry2hpa9e3548obivsb1u23&rid=giphy.gif&ct=g",
+    "https://media1.giphy.com/media/9oEli3vlVaOys/giphy.gif?cid=ecf05e47391ilxca9zmo232ohl2fjsog3p772voy3a66kei7&rid=giphy.gif&ct=g"]
+    embed = discord.Embed(color = discord.Color.random())	
+    random_link = random.choice(kiss)
+    embed.set_image(url = random_link)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["h"])
+async def hug(ctx):
+
+    hug =[
+    "https://media2.giphy.com/media/od5H3PmEG5EVq/giphy.gif?cid=ecf05e47hr1v6n1cw9v1xwg5ymepkmisnu6aj10v02338ejh&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/ZQN9jsRWp1M76/giphy.gif?cid=ecf05e47r0yddo90i00k9qg00yd9nsvk9nccovzne2221yqk&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/DjczAlIcyK1Co/giphy.gif?cid=ecf05e47rv588n2k7n3bkizs7xftx2md8iu1cp79cgdsqmvx&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif?cid=ecf05e47f914mf50rmrx9ax1v32edl6tiyrt2swy3mknf5fo&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/sUIZWMnfd4Mb6/giphy.gif?cid=ecf05e47hr1v6n1cw9v1xwg5ymepkmisnu6aj10v02338ejh&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/wSY4wcrHnB0CA/giphy.gif?cid=ecf05e47ozgkengb3ss9x8k6k3vm44xba1ddnvec926opgew&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/svXXBgduBsJ1u/giphy.gif?cid=ecf05e47o2a2hviriw4io4aow6g71gmw50pmlhrhf4xoc5dm&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/IRUb7GTCaPU8E/giphy.gif?cid=ecf05e47kcjghjiiqwfnvy0o1ysulsiufmcy1paenver04na&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/u9BxQbM5bxvwY/giphy.gif?cid=ecf05e47sv3vb435bafpcy000idda2p2d0yctrkw9aiz3irh&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/49mdjsMrH7oze/giphy.gif?cid=ecf05e47xp6v79bnn8pra2k4w8rq413boqx9cfs6jtrlip5c&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/3OCOHkV0ZOZ2g/giphy.gif?cid=ecf05e47dh5x9pbtfjhcui3r0450ahb9x8wfw9efw7xf1syl&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/2A75Y6NodD38I/giphy.gif?cid=ecf05e47i2mx5fnz8ur4ejjh39qrbgw0o9ar9szadj6ode3f&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/2z0vIXgRbRrb2/giphy.gif?cid=ecf05e472rhfo6ntmep3h4pzgkpwtifi9xyxd9hks8s941hi&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/C4gbG94zAjyYE/giphy.gif?cid=ecf05e47lts8xc8rhugnexojkmdw0559vaavz76sccoyfddz&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/ZQN9jsRWp1M76/giphy.gif?cid=ecf05e47l7twrsoq5bcyhc6520u7k3dge8bfo4bwgnzu1t68&rid=giphy.gif&ct=g",]
+    embed = discord.Embed(color = discord.Color.random())	
+    random_link = random.choice(hug)
+    embed.set_image(url = random_link)
+    await ctx.send(embed = embed)
+
+
+@client.command(aliases=["s"])
+async def slap(ctx):
+    slap =[
+    "https://media2.giphy.com/media/tX29X2Dx3sAXS/giphy.gif?cid=ecf05e47auaianv8wu2sifvpa3xegqny85ht374wdey97qrg&rid=giphy.gif&ct=g",
+    "https://media2.giphy.com/media/Zau0yrl17uzdK/giphy.gif?cid=ecf05e477tzj0undwh0m076uljg6uq09a787fa27kcppnu6a&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/xUO4t2gkWBxDi/giphy.gif?cid=ecf05e47ull4fm9cyrti9okbo8a3dxfsj1v95uvm6v8azee2&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/Gf3AUz3eBNbTW/giphy.gif?cid=ecf05e47uub0cvr5a9v7xxv2sm3hwwckq0hvn9gqdcdyvp8t&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/9U5J7JpaYBr68/giphy.gif?cid=ecf05e47auaianv8wu2sifvpa3xegqny85ht374wdey97qrg&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/xUNd9HZq1itMkiK652/giphy.gif?cid=ecf05e47auaianv8wu2sifvpa3xegqny85ht374wdey97qrg&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/6Fad0loHc6Cbe/giphy.gif?cid=ecf05e47e4frejj7bb1p7xlx0v1mwfs9tsdd15kbdrrpshaa&rid=giphy.gif&ct=g",
+    "https://media0.giphy.com/media/AW8xRg8LNiR2g/giphy.gif?cid=ecf05e47m9wh0wx7q7c76abr2sco8dct7r5idr43iibksnpl&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/qNtqBSTTwXyuI/giphy.gif?cid=ecf05e47pamc15zulqv5971a2wsbd75rtal6at21zpy9l924&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/Y6c59hTH3TJoA/giphy.gif?cid=ecf05e472wclrvj134n30melshpmriddb7j08w4ehpbmoib4&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/EQ85WxyAAwEaQ/giphy.gif?cid=ecf05e47ym8mm1sx7rect5kjib30xlis65t2166ogf5anr64&rid=giphy.gif&ct=g",
+    "https://media1.giphy.com/media/LB1kIoSRFTC2Q/giphy.gif?cid=ecf05e47j1qz7o218j04jt7v7i1xlb1zl95uj4ta36igk0f2&rid=giphy.gif&ct=g",
+    "https://media3.giphy.com/media/k1uYB5LvlBZqU/giphy.gif?cid=ecf05e471q920321wrkkliatsupntd98lxeg1ciax1q4gxwf&rid=giphy.gif&ct=g",
+    "https://media4.giphy.com/media/7u6Lr6c6ZIOqY/giphy.gif?cid=ecf05e479p119xq1iyxfzmg2qrt59h36426a9xkd3xf6758f&rid=giphy.gif&ct=g",
+   	]
+    embed = discord.Embed(color = discord.Color.random())	
+    random_link = random.choice(slap)
+    embed.set_image(url = random_link)
+    await ctx.send(embed = embed)
 
 
 
 #music commands
-
-
-
-
-
 
 
 @client.event

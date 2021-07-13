@@ -294,13 +294,13 @@ async def serverinfo(ctx):
 	embed = discord.Embed(title = "SERVERINFO",color = 0xffdf00,timestamp =ctx.message.created_at)
 	embed.set_thumbnail(url=ctx.guild.icon_url)
 
-	embed.add_field(name ="Server Name", value =ctx.guild.name,inline =False)
+	embed.add_field(name ="Server Name", value =ctx.guild.name)
 	embed.add_field(name ="Total Members", value = ctx.guild.member_count,inline =False)
-	embed.add_field(name="Server Region", value=ctx.guild.region,inline =False)
+	embed.add_field(name="Server Region", value=ctx.guild.region)
 	embed.add_field(name="Server Owner", value=ctx.guild.owner,inline = False)
-	embed.add_field(name="Server ID", value=ctx.guild.id,inline =False)
+	embed.add_field(name="Server ID", value=ctx.guild.id)
 	embed.add_field(name ="Higher role", value = ctx.guild.roles[-2],inline =False)
-	embed.add_field(name ="Number of roles", value = str(role_count),inline =False)
+	embed.add_field(name ="Number of roles", value = str(role_count))
 	
 	embed.set_footer(text=f"Request by {ctx.author.name}",icon_url = ctx.author.avatar_url)
 

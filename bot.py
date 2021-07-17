@@ -107,7 +107,7 @@ async def nickname(ctx):
 async def poll(ctx):
 	embed = discord.Embed(title="poll",description="Use this Command to Conduct a poll and ```poll is in yes and no```",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~poll ``event title```")
+	embed.add_field(name ="**command**", value = "k~poll ```event title```")
 
 	await ctx.send(embed = embed)
 

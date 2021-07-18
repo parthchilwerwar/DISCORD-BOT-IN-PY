@@ -710,7 +710,10 @@ async def slap(ctx):
 
 
 #music commands
-
+@client.command()
+async def join(ctx):
+    await ctx.author.voice.channel.connect()
+   
 
 @client.command(aliases=['paly', 'queue', 'que'])
 async def play(ctx):

@@ -10,11 +10,13 @@ from pyrandmeme import *
 import time
 import DiscordUtils
 from io import BytesIO
+from discord import FFmpegPCMAudio
 
 
 
 client = commands.Bot(command_prefix='k~')
 client.remove_command('help')
+music = DiscordUtils.Music()
 api_key = "6beb4cf35bb9797f16db57512aaa1307"
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
@@ -709,6 +711,104 @@ async def slap(ctx):
 
 
 #music commands
+
+@client.command()
+async def join(ctx):
+    await ctx.author.voice.channel.connect()
+
+@client.command()
+async def leave(ctx):
+    await ctx.voice_client.disconnect()
+
+@client.command(aliases = ["p"])
+async def play(ctx, *, url):
+    player = music.get_player(guild_id=ctx.guild.id)
+    if not player:
+        player = music.create_player(ctx, ffmpeg_error_betterfix=True)
+    if not ctx.voice_client.is_playing():
+        await player.queue(url, search=True)
+        song = await player.play()
+        embed = discord.Embed(description =f"<:jazzcd:865839452169699328> Playing : ```{song.name}```⇆ㅤ ◁ㅤ❚❚ㅤ▷ㅤ ↻",color= 0xFF6100)
+        await ctx.send(embed = embed)
+    else:
+        song = await player.queue(url, search=True)
+        embed =  discord.Embed(description =f"The ```{song.name}``` has been add in Queued")
+        await ctx.send(embed = embed)
+
+@client.command()
+async def pause(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song = await player.pause()
+    embed = discord.Embed(description =f"Just Paused ```{song.name}```",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["r"])
+async def resume(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song = await player.resume()
+    embed = discord.Embed(description =f"Resuming the ```{song.name}```",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["s"])
+async def stop(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    await player.stop()
+    embed = discord.Embed(description = "Just Stopped playing Music",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["l"])
+async def loop(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song = await player.toggle_song_loop()
+    if song.is_looping:
+    	embed = discord.Embed(description =f"Enabled loop for ```{song.name}```",color= 0xFF6100)
+    	await ctx.send(embed = embed)
+        
+    else:
+    	embed = discord.Embed(description =f"Disabled loop for ```{song.name}```",color= 0xFF6100)
+    	await ctx.send(embed = embed)
+
+@client.command(aliases=["q"])
+async def queue(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    embed = discord.Embed(description ='\n'.join(song.name for song in player.current_queue()))
+    await ctx.send(embed = embed)
+
+@client.command()
+async def np(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song = player.now_playing()
+    embed = discord.Embed(description =f"Currently playing ```{song.name}```",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["sk"])
+async def skip(ctx):
+    player = music.get_player(guild_id=ctx.guild.id)
+    data = await player.skip(force=True)
+    if len(data) == 2:
+    	embed = discord.Embed(description=f"Skipped from {data[0].name} to {data[1].name}",color= 0xFF6100)
+    	await ctx.send(embed = embed)
+
+    else:
+    	embed = discord.Embed(description =f"Skipped ```{data[0].name}```",color= 0xFF6100)
+    	await ctx.send(embed = embed)
+        
+
+@client.command(aliases=["v"])
+async def volume(ctx, vol):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song, volume = await player.change_volume(float(vol) / 100)
+    embed = discord.Embed(description =f"<:soqund:865839452084633630>Changed volume for ```{song.name}``` to ```{volume*100}%```",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+@client.command(aliases=["rm"])
+async def remove(ctx, index):
+    player = music.get_player(guild_id=ctx.guild.id)
+    song = await player.remove_from_queue(int(index))
+    embed = discord.Embed(description =f"Removed the song : ```{song.name}``` from Queue",color= 0xFF6100)
+    await ctx.send(embed = embed)
+
+
 
 
 @client.event

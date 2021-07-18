@@ -710,18 +710,7 @@ async def slap(ctx):
 
 
 #music commands
-@client.command()
-async def join(ctx):
-    await ctx.author.voice.channel.connect()
-   
 
-@client.command(aliases=['paly', 'queue', 'que'])
-async def play(ctx):
-    guild = ctx.guild
-    voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
-    audio_source = discord.FFmpegPCMAudio('sink.mp3')
-    if not voice_client.is_playing():
-        voice_client.play(audio_source, after=None)
 
 
 @client.event

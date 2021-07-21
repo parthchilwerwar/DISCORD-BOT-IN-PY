@@ -225,7 +225,11 @@ async def invite(ctx):
 	embed = discord.Embed(description = '[Invite](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot)',color = 0xE500FF)
 	await ctx.send(embed = embed)
 	
-
+@client.command(pass_context=True,aliases=["gr"])
+async def giverole(ctx, user: discord.Member, role: discord.Role):
+    embed = discord.Embed(description=f"{user.mention},{ctx.author.name} Just gave you{role.mention} Role")
+    await user.add_roles(role)
+    await ctx.send(embed=embed)
 
 @client.command()
 async def say(ctx,*,text):

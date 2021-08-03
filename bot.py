@@ -222,7 +222,7 @@ async def ping(ctx):
 
 @client.command()
 async def invite(ctx):
-	embed = discord.Embed(description = '[```Invite```](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot)',color = 0xE500FF)
+	embed = discord.Embed(description = '[```Invite```](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot)',color = 0xF8E3EC)
 	await ctx.send(embed = embed)
 	
 @client.command(pass_context=True,aliases=["gr"])
@@ -240,7 +240,7 @@ async def say(ctx,*,text):
 
 @client.command()
 async def twitch(ctx):
-	embed = discord.Embed(title="TWITCH",url = "https://www.twitch.tv/kan4me",color = discord.Color.purple())
+	embed = discord.Embed(title="TWITCH",url = "https://www.twitch.tv/kan4me",color = 0xF8E3EC)
 	await ctx.send(embed = embed)
 
 @client.command()

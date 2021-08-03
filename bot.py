@@ -84,14 +84,14 @@ async def clean(ctx):
 async def lock(ctx):
 	embed = discord.Embed(title="lock",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~lock ")
+	embed.add_field(name ="**command**", value = "k~lock [aliases = l]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unlock(ctx):
 	embed = discord.Embed(title="unlock",description="Use this Command to unlock a channel..",colour = 0x6cfd00 )
-	embed.add_field(name ="**command**", value = "k~unlock")
+	embed.add_field(name ="**command**", value = "k~unlock [aliases = ul]")
 
 	await ctx.send(embed = embed)
 
@@ -222,7 +222,7 @@ async def ping(ctx):
 
 @client.command()
 async def invite(ctx):
-	embed = discord.Embed(description = '[Invite](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot)',color = 0xE500FF)
+	embed = discord.Embed(description = '[```Invite```](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot)',color = 0xE500FF)
 	await ctx.send(embed = embed)
 	
 @client.command(pass_context=True,aliases=["gr"])
@@ -269,7 +269,7 @@ async def avatar(ctx,*, member: discord.Member=None):
 	embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url = ctx.author.avatar_url)
 	await ctx.send(embed = embed)
 
-@client.command()
+@client.command(aliases=["l"])
 @commands.has_permissions(manage_channels = True)
 async def lock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
@@ -280,7 +280,7 @@ async def lock(ctx):
     
     
 
-@client.command()
+@client.command(aliases=["ul"])
 @commands.has_permissions(manage_channels=True)
 async def unlock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)

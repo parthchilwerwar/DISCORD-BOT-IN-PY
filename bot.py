@@ -290,7 +290,19 @@ async def unlock(ctx):
     await msg.add_reaction("✅")
     await ctx.message.delete()
     
+@client.command(aliases=["lvc"])  
+async def lockvc(ctx):
+     msg = await ctx.channel.send("```All Voice channel went under lockdown mode 🔒```")
+     for channel in ctx.guild.voice_channels:
+          await channel.set_permissions(ctx.guild.default_role, connect=False)
+          await msg.add_reaction("✅")
 
+@client.command(aliases=["ulv"])
+async def unlockvc(ctx):
+    msg = await ctx.channel.send("``` All Voice channel are now unlock  🔓```")
+    for channel in ctx.guild.voice_channels:
+        await channel.set_permissions(ctx.guild.default_role, connect=True) 
+        await msg.add_reaction("✅")  
 
 @client.command()
 async def serverinfo(ctx):

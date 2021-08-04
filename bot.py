@@ -469,7 +469,7 @@ async def dare(ctx):
 		"Laugh out loud at everything the person to your left says until it’s your turn.",
 		"Stand up and try to break dance."]
 	embed = discord.Embed(description=f"{random.choice(dares)}",color =0xF8E3EC)
-	await ctx.reply(embed=embed)
+	await ctx.reply(embed=embed, mention_author=False)
 
 
 @client.command(aliases=["t"])
@@ -614,7 +614,7 @@ async def truth(ctx):
 
 		]
     embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xF8E3EC)
-    await ctx.reply(embed = embed)
+    await ctx.reply(embed = embed, mention_author=False)
 
 
 @client.command()

@@ -23,7 +23,7 @@ base_url = "http://api.openweathermap.org/data/2.5/weather?"
 @client.event
 async def on_ready():
 
-	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f"{len(client.guilds)} Guilds | Use  k~  For help "))
+	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.Watching, name=f"THAT YOU WILL USE | k~  FOR HELP "))
 
 	print("bot is online")
 	
@@ -331,8 +331,6 @@ async def userinfo(ctx, member: discord.Member = None):
     embed.add_field(name="Roles:", value=" ".join(roles),inline =False)
 
     await ctx.send(embed=embed)
-
-
 
 @client.command(pass_context=True)
 @commands.has_permissions(kick_members =True)

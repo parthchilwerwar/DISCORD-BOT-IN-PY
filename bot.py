@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 import requests
-from datetime import datetime
+import datetime
 import json
 import random
 import asyncio
@@ -16,7 +16,6 @@ from discord import FFmpegPCMAudio
 
 client = commands.Bot(command_prefix='k~')
 client.remove_command('help')
-client.launch_time = datetime.utcnow()
 api_key = "6beb4cf35bb9797f16db57512aaa1307"
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
@@ -722,13 +721,6 @@ async def slap(ctx):
     embed.set_image(url = random_link)
     await ctx.send(embed = embed)
 
-@client.command()
-async def uptime(ctx):
-    delta_uptime = datetime.utcnow() - client.launch_time
-    hours, remainder = divmod(int(delta_uptime.total_seconds()), 3600)
-    minutes, seconds = divmod(remainder, 60)
-    days, hours = divmod(hours, 24)
-    await ctx.send(f"{days}d , {hours}h, {minutes}m, {seconds}s")  
 
 #music commands
 

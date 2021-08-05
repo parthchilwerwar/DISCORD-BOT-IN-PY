@@ -178,7 +178,7 @@ async def userinfo(ctx):
 @help.command()
 async def td(ctx):
 	embed = discord.Embed(title="TRUTH & DARE ",description="Use this command to play game of truth and dare", color = discord.Color.random())
-	embed.add_field(name ="**command**", value = "k~truth,Aliases('t') `for truth Qustions` and k~dare,Aliases('d') `for dare Question`") 
+	embed.add_field(name ="**command**", value = "k~truth,Aliases('t') `for truth Qustions` and k~dare,Aliases('d') `for dare Questions`") 
 
 	await ctx.send(embed = embed)
 
@@ -292,7 +292,7 @@ async def unlock(ctx):
     
 @client.command(aliases=["lvc"])  
 async def lockvc(ctx):
-     msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels went under lockdown mode 🔒```")
+     msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels are now lockded 🔒```")
      for channel in ctx.guild.voice_channels:
           await channel.set_permissions(ctx.guild.default_role, connect=False)
           await msg.add_reaction("✅")

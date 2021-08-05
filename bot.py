@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 import requests
-import datetime
 from datetime import datetime
 import json
 import random

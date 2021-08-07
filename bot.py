@@ -95,6 +95,26 @@ async def unlock(ctx):
 
 	await ctx.send(embed = embed)
 
+@help.command()
+async def lockvc(ctx):
+	embed = discord.Embed(title="lockvc",description="Use this Command to lock all vc of a guild",colour = 0x6cfd00 )
+	embed.add_field(name ="**command**", value = "k~lockvc [aliases = lvc]")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def unlockvc(ctx):
+	embed = discord.Embed(title="unlockvc",description="Use this Command to unlock all vc of a guild",colour = 0x6cfd00 )
+	embed.add_field(name ="**command**", value = "k~unlockvc [aliases = ulv]")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def giverole(ctx):
+	embed = discord.Embed(title="Giverole",description="Use this Command to give someone specific role",colour = 0x6cfd00 )
+	embed.add_field(name ="**command**", value = "k~giverole <mention_user/user_id> <role_id/mention_role> [aliases = gr]")
+
+	await ctx.send(embed = embed)
 
 @help.command()
 async def nickname(ctx):

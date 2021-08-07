@@ -238,7 +238,7 @@ async def uptime(self ,ctx):
 async def announce(ctx,channel: discord.TextChannel,* ,msg):
     embed = discord.Embed(description=f"{msg}")
     await channel.send(embed = embed)
-    await ctx.send(f"Successful Done Announcement in {ctx.channel.mention}")
+    await ctx.send(f"Announcement Done Successful")
     await ctx.message.delete()
 
 @client.command()

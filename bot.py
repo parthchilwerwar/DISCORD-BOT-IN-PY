@@ -234,6 +234,12 @@ async def uptime(self ,ctx):
 	embed = discord.Embed(title=f"I've been up  for {days}d, {hours}h, {minutes}m, {seconds}s,", color=discord.Color.green())
 	await ctx.send(embed = embed)
 
+@client.command(aliases=["anou"])
+async def announce(ctx,channel: discord.TextChannel,* ,msg):
+    embed = discord.Embed(description=f"{msg}")
+    await channel.send(embed = embed)
+    await ctx.send(f"Successful Done Announcement in {ctx.channel.mention}")
+    await ctx.message.delete()
 
 @client.command()
 async def ping(ctx):

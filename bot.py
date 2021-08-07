@@ -367,7 +367,7 @@ async def userinfo(ctx, member: discord.Member = None):
 
 @client.command(pass_context=True)
 @commands.has_permissions(kick_members =True)
-async def nickname(ctx,*, member: discord.Member, nick):
+async def nickname(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
     embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed",color = 0xF8E3EC)
     await ctx.send(embed = embed)

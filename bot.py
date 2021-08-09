@@ -14,7 +14,7 @@ from discord import FFmpegPCMAudio
 
 
 
-client = commands.Bot(command_prefix='k~',intents=intents=discord.Intents.all())
+client = commands.Bot(command_prefix='k~',intents=discord.Intents.all())
 client.remove_command('help')
 client.launch_time = datetime.utcnow()
 api_key = "6beb4cf35bb9797f16db57512aaa1307"

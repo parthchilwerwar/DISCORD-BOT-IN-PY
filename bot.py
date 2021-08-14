@@ -720,7 +720,7 @@ async def hug(ctx):
     "https://media3.giphy.com/media/2z0vIXgRbRrb2/giphy.gif?cid=ecf05e472rhfo6ntmep3h4pzgkpwtifi9xyxd9hks8s941hi&rid=giphy.gif&ct=g",
     "https://media4.giphy.com/media/C4gbG94zAjyYE/giphy.gif?cid=ecf05e47lts8xc8rhugnexojkmdw0559vaavz76sccoyfddz&rid=giphy.gif&ct=g",
     "https://media0.giphy.com/media/ZQN9jsRWp1M76/giphy.gif?cid=ecf05e47l7twrsoq5bcyhc6520u7k3dge8bfo4bwgnzu1t68&rid=giphy.gif&ct=g",]
-    embed = discord.Embedcolor = discord.Color.random())	
+    embed = discord.Embed(color = discord.Color.random())	
     random_link = random.choice(hug)
     embed.set_image(url = random_link)
     await ctx.send(embed = embed)

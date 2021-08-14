@@ -681,6 +681,7 @@ async def weather(ctx, *, city: str):
 @client.command(aliases=["k"])
 async def kiss(ctx):
 
+
     kiss =[
     "https://media1.giphy.com/media/kU586ictpGb0Q/giphy.gif?cid=ecf05e478364xmyyaif02ureji086b3ls6lzpqhpk666lh0g&rid=giphy.gif&ct=g", 
     "https://media1.giphy.com/media/zkppEMFvRX5FC/giphy.gif?cid=ecf05e47aswq2rkl87iqpswtn7rpthceezksgmhl5mdi9iua&rid=giphy.gif&ct=g",
@@ -695,7 +696,7 @@ async def kiss(ctx):
     "https://media0.giphy.com/media/H8XZI3PJm258c/giphy.gif?cid=ecf05e471ok5vo6cegt8thwq48fq68xo2brskturmws0ivjx&rid=giphy.gif&ct=g",
     "https://media0.giphy.com/media/VXsUx3zjzwMhi/giphy.gif?cid=ecf05e47ebfupjgmiogjsqzfunry2hpa9e3548obivsb1u23&rid=giphy.gif&ct=g",
     "https://media1.giphy.com/media/9oEli3vlVaOys/giphy.gif?cid=ecf05e47391ilxca9zmo232ohl2fjsog3p772voy3a66kei7&rid=giphy.gif&ct=g"]
-    embed = discord.Embed(color = discord.Color.random())	
+    embed = discord.Embed(title = f"{ctx.author.username} Just kissed {member}",color = discord.Color.random())	
     random_link = random.choice(kiss)
     embed.set_image(url = random_link)
     await ctx.send(embed = embed)
@@ -719,7 +720,7 @@ async def hug(ctx):
     "https://media3.giphy.com/media/2z0vIXgRbRrb2/giphy.gif?cid=ecf05e472rhfo6ntmep3h4pzgkpwtifi9xyxd9hks8s941hi&rid=giphy.gif&ct=g",
     "https://media4.giphy.com/media/C4gbG94zAjyYE/giphy.gif?cid=ecf05e47lts8xc8rhugnexojkmdw0559vaavz76sccoyfddz&rid=giphy.gif&ct=g",
     "https://media0.giphy.com/media/ZQN9jsRWp1M76/giphy.gif?cid=ecf05e47l7twrsoq5bcyhc6520u7k3dge8bfo4bwgnzu1t68&rid=giphy.gif&ct=g",]
-    embed = discord.Embed(color = discord.Color.random())	
+    embed = discord.Embed(title = f"{ctx.author.username} Just hugged {member}",color = discord.Color.random())	
     random_link = random.choice(hug)
     embed.set_image(url = random_link)
     await ctx.send(embed = embed)
@@ -743,7 +744,7 @@ async def slap(ctx):
     "https://media3.giphy.com/media/k1uYB5LvlBZqU/giphy.gif?cid=ecf05e471q920321wrkkliatsupntd98lxeg1ciax1q4gxwf&rid=giphy.gif&ct=g",
     "https://media4.giphy.com/media/7u6Lr6c6ZIOqY/giphy.gif?cid=ecf05e479p119xq1iyxfzmg2qrt59h36426a9xkd3xf6758f&rid=giphy.gif&ct=g",
    	]
-    embed = discord.Embed(color = discord.Color.random())	
+    embed = discord.Embed(title = f"{ctx.author.username} Just slapped {member}",color = discord.Color.random())	
     random_link = random.choice(slap)
     embed.set_image(url = random_link)
     await ctx.send(embed = embed)

@@ -317,7 +317,8 @@ async def unlock(ctx):
     await msg.add_reaction("✅")
     await ctx.message.delete()
     
-@client.command(aliases=["lvc"])  
+@client.command(aliases=["lvc"])
+@commands.has_permissions(manage_channels=True)
 async def lockvc(ctx):
      msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels are now lockded 🔒```")
      for channel in ctx.guild.voice_channels:
@@ -325,6 +326,7 @@ async def lockvc(ctx):
           await msg.add_reaction("✅")
 
 @client.command(aliases=["ulv"])
+@commands.has_permissions(manage_channels=True)
 async def unlockvc(ctx):
     msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels are now unlock  🔓```")
     for channel in ctx.guild.voice_channels:
@@ -768,7 +770,6 @@ async def on_command_error(ctx,error):
 		embed = discord.Embed(description="✅   |  Hey, provide a proper Arguments",color = 0x3bbf45)
 		await ctx.message.delete()
 		await ctx.send(embed = embed)
-
 
 
 

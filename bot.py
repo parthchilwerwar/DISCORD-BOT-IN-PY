@@ -284,17 +284,6 @@ async def clean(ctx , amount=2):
 	await ctx.message.delete()
 	await ctx.channel.purge(limit=amount)
 
-@client.command(aliases=["av"])
-async def avatar(ctx,*, member: discord.Member=None):
-	if not member:
-		member = ctx.message.author
-	userAvatar = member.avatar_url
-
-	embed = discord.Embed(color = 0xE500FF , timestamp = ctx.message.created_at)
-	embed.set_author(name = f"Avatar of {member}")
-	embed.set_image(url = member.avatar_url)
-	embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url = ctx.author.avatar_url)
-	await ctx.send(embed = embed)
 
 @client.command(aliases=["l"])
 @commands.has_permissions(manage_channels = True)

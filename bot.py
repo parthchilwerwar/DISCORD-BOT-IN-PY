@@ -768,4 +768,4 @@ async def on_command_error(ctx,error):
 
 
 
-client.run("ODM0MDI5MTE0NTM2NDkzMDY2.YH68JA.oIgLjbDK3ZGUqCj-Sh8AfvsSyUU")
+client.run("ODM0MDI5MTE0NTM2NDkzMDY2.YH68JA.apLiBNDXiG_D3eDHcGgYShaXE_s")

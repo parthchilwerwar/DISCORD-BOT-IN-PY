@@ -233,12 +233,6 @@ async def uptime(self ,ctx):
 	days, hours = divmod(hours, 24)
 	embed = discord.Embed(title=f"I've been up  for {days}d, {hours}h, {minutes}m, {seconds}s,", color=discord.Color.green())
 	await ctx.send(embed = embed)
-
-@client.command(aliases=["anou"])
-async def announce(ctx,channel: discord.TextChannel,* ,msg):
-    embed = discord.Embed(description=f"{msg}",color= discord.Color.random())
-    await channel.send(embed = embed)
-    await ctx.send(f"Announcement Done Successful")
 	
 
 @client.command()
@@ -257,6 +251,18 @@ async def giverole(ctx, user: discord.Member, role: discord.Role):
     embed = discord.Embed(description=f"{user.mention},{ctx.author.name} Just gave you{role.mention} Role")
     await user.add_roles(role)
     await ctx.send(embed=embed)
+
+
+
+@client.command(aliases=["announ"])
+async def announce(ctx,channel: discord.TextChannel,* ,msg):
+    embed = discord.Embed(description=f"{msg}",color= discord.Color.random())
+    await channel.send(embed = embed)
+	await ctx.message.delete()
+	await ctx.send(f"Announcement Done Successful")
+	
+
+
 
 @client.command()
 async def say(ctx,*,text):

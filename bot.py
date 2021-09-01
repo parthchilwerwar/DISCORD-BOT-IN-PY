@@ -239,6 +239,7 @@ async def announce(ctx,channel: discord.TextChannel,* ,msg):
     embed = discord.Embed(description=f"{msg}",color= discord.Color.random())
     await channel.send(embed = embed)
     await ctx.send(f"Announcement Done Successful")
+	
 
 @client.command()
 async def ping(ctx):

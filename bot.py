@@ -253,13 +253,6 @@ async def giverole(ctx, user: discord.Member, role: discord.Role):
     await ctx.send(embed=embed)
 
 
-
-@client.command(aliases=["announ"])
-async def announce(ctx,channel: discord.TextChannel,* ,msg):
-    embed = discord.Embed(description=f"{msg}",color= discord.Color.random())
-    await channel.send(embed = embed)
-
-
 @client.command()
 async def say(ctx,*,text):
 	embed = discord.Embed(description =text,color = discord.Color.random())
@@ -372,7 +365,12 @@ async def nickname(ctx, member: discord.Member, nick):
     await ctx.send(embed = embed)
     await ctx.message.delete()
     
-
+@client.command(aliases=["anou"])
+async def announce(ctx,channel: discord.TextChannel,* ,msg):
+    embed = discord.Embed(description=f"{msg}",color= discord.Color.random())
+    await channel.send(embed = embed)
+    await ctx.send(f"Announcement Done Successful")
+    await ctx.message.delete()
 
 @client.command()
 @commands.has_permissions(kick_members=True)

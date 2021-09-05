@@ -354,7 +354,6 @@ async def userinfo(ctx, member: discord.Member = None):
     embed.add_field(name="Joined Server On:", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
     embed.add_field(name="Highest Role:", value=member.top_role.mention,inline =False)
     embed.add_field(name="Roles:", value=" ".join(roles),inline =False)
-	embed.add_field(name="Permissions", value=perm_string, inline =False)
 
     await ctx.send(embed=embed)
 

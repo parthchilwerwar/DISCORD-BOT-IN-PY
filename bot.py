@@ -280,6 +280,11 @@ async def clean(ctx , amount=2):
 	await ctx.channel.purge(limit=amount)
 
 
+@client.command(pass_context=True)
+async def botservers(ctx):
+    await ctx.send("I'm in " + str(len(client.servers)) + " servers")
+
+
 @client.command(aliases=["l"])
 @commands.has_permissions(manage_channels = True)
 async def lock(ctx):

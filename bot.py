@@ -322,6 +322,21 @@ async def unlockvc(ctx):
         await channel.set_permissions(ctx.guild.default_role, connect=True) 
         await msg.add_reaction("✅")  
 
+@client.command(aliases=["h"])
+@commands.has_permissions(manage_channels = True)
+async def hide(ctx):
+    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=False)
+    await ctx.send("I just hidded a channel 👀")
+
+
+
+@client.command(aliases=["unh"])
+@commands.has_permissions(manage_channels = True)
+async def unhide(ctx):
+    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=True)
+    await ctx.send("I just Unhidded a channel 👀")
+
+
 @client.command()
 async def serverinfo(ctx):
 	role_count = len(ctx.guild.roles)

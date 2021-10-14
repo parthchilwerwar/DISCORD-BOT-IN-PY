@@ -326,7 +326,7 @@ async def unlockvc(ctx):
 @commands.has_permissions(manage_channels = True)
 async def hide(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=False)
-    await ctx.reply("I just hidded a channel 👀")
+    await ctx.reply("I just hidded a channel 👀",mention_author=False)
 
 
 
@@ -334,7 +334,7 @@ async def hide(ctx):
 @commands.has_permissions(manage_channels = True)
 async def unhide(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=True)
-    await ctx.reply("I just Unhidded a channel 👀")
+    await ctx.reply("I just Unhidded a channel 👀",mention_author=False)
 
 
 @client.command()

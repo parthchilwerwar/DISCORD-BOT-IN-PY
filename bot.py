@@ -55,6 +55,7 @@ async def snipe(ctx):
 
 
 #help commands
+
 @client.group(invoke_without_command=True)
 async def help(ctx):
 	async with ctx.typing():
@@ -196,7 +197,7 @@ async def userinfo(ctx):
 	await ctx.send(embed = embed)
 
 
-@help.command()
+@help.command(aliases=["truth&dare"])
 async def td(ctx):
 	embed = discord.Embed(title="TRUTH & DARE ",description="Use this command to play game of truth and dare", color = discord.Color.random())
 	embed.add_field(name ="**command**", value = "k~truth,Aliases('t') `for truth Qustions` and k~dare,Aliases('d') `for dare Questions`") 
@@ -293,7 +294,6 @@ async def lock(ctx):
     msg = await ctx.send(embed = embed)
     await msg.add_reaction("✅")
     await ctx.message.delete()
-    
     
 
 @client.command(aliases=["ul"])

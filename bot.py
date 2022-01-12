@@ -322,19 +322,25 @@ async def unlockvc(ctx):
         await channel.set_permissions(ctx.guild.default_role, connect=True) 
         await msg.add_reaction("✅")  
 
-@client.command(aliases=["hidded"])
+@client.command(aliases=["al"])
 @commands.has_permissions(manage_channels = True)
-async def hide(ctx):
-    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=False)
-    await ctx.reply("I just hidded a channel 👀",mention_author=False)
+async def antilock(ctx):
+    msg = await ctx.channel.send("```I just hidded a channel 👀```")
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, send_messages=False) 
+    for channel in ctx.guild.voice_channels:
+        await channel.set_permissions(ctx.guild.default_role, connect=False)
+        await msg.add_reaction("✅")
 
-
-
-@client.command(aliases=["unhidded"])
+@client.command(aliases=["unal"])
 @commands.has_permissions(manage_channels = True)
-async def unhide(ctx):
-    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=True)
-    await ctx.reply("I just Unhidded a channel 👀",mention_author=False)
+async def unantilock(ctx):
+    msg = await ctx.channel.send("```I just Unhidded a channel 👀```")
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, send_messages=True) 
+    for channel in ctx.guild.voice_channels:
+        await channel.set_permissions(ctx.guild.default_role, connect=True)
+        await msg.add_reaction("✅")
 
 
 @client.command()

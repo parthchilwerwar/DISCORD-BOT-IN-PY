@@ -402,6 +402,24 @@ async def poll(ctx,*,question):
     await message.add_reaction('❎')
 
 
+@client.command(aliases=["locked"])
+async def lockall(ctx):
+    msg = await ctx.channel.send("``` All channel went under lockdown mode 🔒```")
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, send_messages=False) 
+        await msg.add_reaction("✅")
+
+
+
+@client.command(aliases=["ula"])
+async def unlockall(ctx):
+    msg = await ctx.channel.send("``` All channel are now unlock  🔒```")
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, send_messages=True) 
+        await msg.add_reaction("✅")
+
+
+
 @client.command(aliases=["d"])
 async def dare(ctx):
 	dares = ["Serenade the person to your right.",

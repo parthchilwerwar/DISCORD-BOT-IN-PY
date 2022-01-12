@@ -325,22 +325,45 @@ async def unlockvc(ctx):
 @client.command(aliases=["al"])
 @commands.has_permissions(manage_channels = True)
 async def antilock(ctx):
-    msg = await ctx.channel.send("```I just hidded a channel 👀```")
+    msg = await ctx.channel.send("```diff\n - Anti lock Just Actived <a:antilock:930938281011593236> ```")
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, send_messages=False) 
     for channel in ctx.guild.voice_channels:
         await channel.set_permissions(ctx.guild.default_role, connect=False)
-        await msg.add_reaction("✅")
+        await msg.add_reaction("<a:antilock:930938281011593236>")
 
 @client.command(aliases=["unal"])
 @commands.has_permissions(manage_channels = True)
 async def unantilock(ctx):
-    msg = await ctx.channel.send("```I just Unhidded a channel 👀```")
+    msg = await ctx.channel.send("```diff\n - Anti lock Just Unactived <a:antilock:930938281011593236> ```")
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, send_messages=True) 
     for channel in ctx.guild.voice_channels:
         await channel.set_permissions(ctx.guild.default_role, connect=True)
-        await msg.add_reaction("✅")
+        await msg.add_reaction("<a:antilock:930938281011593236>")
+
+@client.command(aliases=["h"])
+@commands.has_permissions(manage_channels = True)
+async def antihide(ctx):
+    msg = await ctx.channel.send("```diff\n - All channel Hidded <a:HomerHide:930942071110533142>```") 
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, view_channel=False)
+    for channel in ctx.guild.voice_channels:
+        await channel.set_permissions(ctx.guild.default_role, connect=False)
+        await msg.add_reaction("<a:HomerHide:930942071110533142> ")
+        
+
+
+@client.command(aliases=["unh"])
+@commands.has_permissions(manage_channels = True)
+async def unantihide(ctx):
+    msg = await ctx.channel.send("```diff\n - All channel unHidded <a:HomerHide:930942071110533142>```")
+    for channel in ctx.guild.text_channels:
+        await channel.set_permissions(ctx.guild.default_role, view_channel=True)
+    for channel in ctx.guild.voice_channels:
+        await channel.set_permissions(ctx.guild.default_role, connect=True)
+        await msg.add_reaction("<a:HomerHide:930942071110533142>")
+
 
 
 @client.command()

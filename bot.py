@@ -185,10 +185,10 @@ async def antihide(ctx):
 	await ctx.send(embed = embed)
 
 @help.command()
-async def unantilock(ctx):
-	embed = discord.Embed(title="unantilock",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
+async def unantihide(ctx):
+	embed = discord.Embed(title="unantihide",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~unantilock [aliases = unah]")
+	embed.add_field(name ="**command**", value = "k~unantihide [aliases = unah]")
 
 	await ctx.send(embed = embed)
 

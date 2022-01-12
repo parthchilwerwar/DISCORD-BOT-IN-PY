@@ -401,7 +401,7 @@ async def poll(ctx,*,question):
     await message.add_reaction('✅')
     await message.add_reaction('❎')
 
-@client.command(aliases=["h"])
+@client.command(aliases=["hid"])
 @commands.has_permissions(manage_channels = True)
 async def hide(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=False)
@@ -409,7 +409,7 @@ async def hide(ctx):
 
 
 
-@client.command(aliases=["unh"])
+@client.command(aliases=["unhid"])
 @commands.has_permissions(manage_channels = True)
 async def unhide(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=True)

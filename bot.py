@@ -342,7 +342,7 @@ async def unantilock(ctx):
         await channel.set_permissions(ctx.guild.default_role, connect=True)
         await msg.add_reaction("<a:antilock:930938281011593236>")
 
-@client.command(aliases=["h"])
+@client.command(aliases=["ah"])
 @commands.has_permissions(manage_channels = True)
 async def antihide(ctx):
     msg = await ctx.channel.send("```diff\n - All channel Hidded <a:HomerHide:930942071110533142>```") 
@@ -354,7 +354,7 @@ async def antihide(ctx):
         
 
 
-@client.command(aliases=["unh"])
+@client.command(aliases=["unah"])
 @commands.has_permissions(manage_channels = True)
 async def unantihide(ctx):
     msg = await ctx.channel.send("```diff\n - All channel unHidded <a:HomerHide:930942071110533142>```")

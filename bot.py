@@ -60,7 +60,7 @@ async def snipe(ctx):
 async def help(ctx):
 	async with ctx.typing():
 		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xF8E3EC)
-		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`",inline = False)
+		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantilock`",inline = False)
 		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
 		embed.add_field(name = "😀 | FUN", value = "`meme`")
@@ -161,7 +161,36 @@ async def  weather(ctx):
 
 	await ctx.send(embed = embed)
 
+@help.command()
+async def antilock(ctx):
+	embed = discord.Embed(title="antilock",description="Use this Command to lock all the channels.",colour = 0x6cfd00 )
 
+	embed.add_field(name ="**command**", value = "k~antilock [aliases = al]")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def unantilock(ctx):
+	embed = discord.Embed(title="unantilock",description="Use this Command to unlock all the channels.",colour = 0x6cfd00 )
+
+	embed.add_field(name ="**command**", value = "k~unantilock [aliases = unal]")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def antihide(ctx):
+	embed = discord.Embed(title="antihide",description="Use this Command to hide all the channels.",colour = 0x6cfd00 )
+
+	embed.add_field(name ="**command**", value = "k~antihide [aliases = ah]")
+	await ctx.send(embed = embed)
+
+@help.command()
+async def unantilock(ctx):
+	embed = discord.Embed(title="lock",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
+
+	embed.add_field(name ="**command**", value = "k~unantilock [aliases = unah]")
+
+	await ctx.send(embed = embed)
 
 @help.command()
 async def ping(ctx):

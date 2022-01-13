@@ -316,6 +316,22 @@ async def botservers(ctx):
     await ctx.send("I'm in " + str(len(client.servers)) + " servers")
 
 
+@client.command(aliases=["hidechannel"])
+@commands.has_permissions(manage_channels = True)
+async def hidec(ctx):
+    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel=False)
+    msg = await ctx.send("👀")
+    await msg.add_reaction("✅")
+    await ctx.message.delete()
+
+@client.command(aliases=["unhidechannel"])
+@commands.has_permissions(manage_channels = True)
+async def unhidec(ctx):
+    await ctx.channel.set_permissions(ctx.guild.default_role, =False , view_channel = True)
+    msg = await ctx.send("👀")
+    await msg.add_reaction("✅")
+    await ctx.message.delete()
+
 @client.command(aliases=["l"])
 @commands.has_permissions(manage_channels = True)
 async def lock(ctx):

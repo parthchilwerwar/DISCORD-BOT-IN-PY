@@ -346,7 +346,6 @@ async def lock(ctx):
 @commands.has_permissions(manage_channels=True)
 async def unlock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
-
     embed = discord.Embed(description = ctx.channel.mention + "```Has removed the lockdown mode 🔓```" , color = 0x3bbf45)
     msg = await ctx.send(embed = embed) 
     await msg.add_reaction("✅")

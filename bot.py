@@ -362,7 +362,7 @@ async def lockvc(ctx):
 @client.command(aliases=["ulv"])
 @commands.has_permissions(manage_channels=True)
 async def unlockvc(ctx):
-    msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels are now unlock  🔓```")
+    msg = await ctx.channel.send(f"```{ctx.guild.name}    Voice channels are now unlocked  🔓```")
     for channel in ctx.guild.voice_channels:
         await channel.set_permissions(ctx.guild.default_role, connect=True) 
         await msg.add_reaction("✅")  
@@ -370,7 +370,7 @@ async def unlockvc(ctx):
 @client.command(aliases=["al"])
 @commands.has_permissions(manage_channels = True)
 async def antilock(ctx):
-    msg = await ctx.channel.send("```fix\n Anti lock Just Actived ```")
+    msg = await ctx.channel.send("```fix\n Anti lock Just Actived of {ctx.guild.name} ```")
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, send_messages=False) 
     for channel in ctx.guild.voice_channels:
@@ -380,7 +380,7 @@ async def antilock(ctx):
 @client.command(aliases=["unal"])
 @commands.has_permissions(manage_channels = True)
 async def unantilock(ctx):
-    msg = await ctx.channel.send("```fix\n Anti lock Just Unactived ```")
+    msg = await ctx.channel.send("```fix\n Anti lock Just Unactived of {ctx.guild.name} ```")
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, send_messages=True) 
     for channel in ctx.guild.voice_channels:
@@ -390,7 +390,7 @@ async def unantilock(ctx):
 @client.command(aliases=["ah"])
 @commands.has_permissions(manage_channels = True)
 async def antihide(ctx):
-    msg = await ctx.channel.send("```fix\n All channel Hidded ```") 
+    msg = await ctx.channel.send("```fix\n All channel Hidded of {ctx.guild.name}```") 
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, view_channel=False)
     for channel in ctx.guild.voice_channels:
@@ -402,7 +402,7 @@ async def antihide(ctx):
 @client.command(aliases=["unah"])
 @commands.has_permissions(manage_channels = True)
 async def unantihide(ctx):
-    msg = await ctx.channel.send("```fix\n All channel unHidded ```")
+    msg = await ctx.channel.send("```fix\n All channel unHidded of {ctx.guild.name}```")
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, view_channel=True)
     for channel in ctx.guild.voice_channels:

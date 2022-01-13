@@ -379,7 +379,7 @@ async def antihide(ctx):
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, view_channel=False)
     for channel in ctx.guild.voice_channels:
-        await channel.set_permissions(ctx.guild.default_role, connect=False)
+        await channel.set_permissions(ctx.guild.default_role, view_channel=False)
         await msg.add_reaction("<a:HomerHide:930942071110533142>")
         
 
@@ -391,7 +391,7 @@ async def unantihide(ctx):
     for channel in ctx.guild.text_channels:
         await channel.set_permissions(ctx.guild.default_role, view_channel=True)
     for channel in ctx.guild.voice_channels:
-        await channel.set_permissions(ctx.guild.default_role, connect=True)
+        await channel.set_permissions(ctx.guild.default_role, view_channel=True)
         await msg.add_reaction("<a:HomerHide:930942071110533142>")
 
 

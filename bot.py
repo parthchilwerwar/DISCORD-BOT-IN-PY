@@ -327,7 +327,7 @@ async def hidec(ctx):
 @client.command(aliases=["unhidechannel"])
 @commands.has_permissions(manage_channels = True)
 async def unhidec(ctx):
-    await ctx.channel.set_permissions(ctx.guild.default_role, =False , view_channel = True)
+    await ctx.channel.set_permissions(ctx.guild.default_role, view_channel = True)
     msg = await ctx.send("👀")
     await msg.add_reaction("✅")
     await ctx.message.delete()

@@ -31,29 +31,6 @@ async def on_ready():
 
 
 
-snipe_message_author = {}
-snipe_message_content = {}
- 
-@client.event
-async def on_message_delete(message):
-     snipe_message_author[message.channel.id] = message.author
-     snipe_message_content[message.channel.id] = message.content
-     await asyncio.sleep(60)
-     
-      
-@client.command()
-async def snipe(ctx):
-    channel = ctx.channel 
-    try:
-        snipeEmbed = discord.Embed(title=f"Last deleted message in #{channel.name}", description = snipe_message_content[channel.id],color=0x43ed35)
-        snipeEmbed.set_footer(text=f"Deleted by {snipe_message_author[channel.id]}")
-        await ctx.send(embed = snipeEmbed)
-    except:
-    	embed = discord.Embed(description =f"There are no deleted messages in {ctx.channel.mention}",color = discord.Color.random())
-		await ctx.send(embed=embed)
-        
-
-
 #help commands
 
 @client.group(invoke_without_command=True)
@@ -61,7 +38,7 @@ async def help(ctx):
 	async with ctx.typing():
 		embed = discord.Embed(title="kan",description="USE `kan` (command) so it will Extended functionality" ,color=0xFF0000)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantihide`,`announce`",inline = False)
-		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
+		embed.add_field(name = "✍| GENERAL COMMAND", value = "`ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
 		embed.add_field(name = "😀 | FUN", value = "`meme`")
 		embed.add_field(name = "ℹ️ | INFORMATION", value = "`serverinfo`,`userinfo`",inline = False)

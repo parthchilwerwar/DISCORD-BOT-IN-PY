@@ -44,7 +44,7 @@ async def help(ctx):
 		embed.add_field(name = "ℹ️ | INFORMATION", value = "`serverinfo`,`userinfo`",inline = False)
 		embed.add_field(name = "Link", value = "[invite](https://discord.com/api/oauth2/authorize?client_id=834029114536493066&permissions=8&scope=bot) ",inline = False)
 		embed.set_footer(text = f"Requested by  '{ctx.author.name}'",icon_url = ctx.author.avatar_url)
-		embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/834029114536493066/941bfdb829d248ac63b6a47a1c224ffb.png?size=1024")
+		embed.set_thumbnail(url="https://media.discordapp.net/attachments/882102948811915294/932688848352325643/Untitled_design.gif")
 		await asyncio.sleep(2)
 
 	await ctx.send(embed=embed)

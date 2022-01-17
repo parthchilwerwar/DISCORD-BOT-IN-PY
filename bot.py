@@ -50,7 +50,7 @@ async def snipe(ctx):
         await ctx.send(embed = snipeEmbed)
     except:
     	embed = discord.Embed(description =f"There are no deleted messages in {ctx.channel.mention}",color = discord.Color.random())
-    	await ctx.send(embed = embed)
+		await ctx.send(embed = embed)
         
 
 
@@ -735,41 +735,8 @@ async def truth(ctx):
 
 		]
     embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xFF0000)
-    await ctx.reply(embed = embed, mention_author=False)
+    await ctx.reply(embed = embed, mention_author=False
 
-
-@client.command()
-async def weather(ctx, *, city: str):
-    city_name = city
-    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
-    response = requests.get(complete_url)
-    x = response.json()
-    channel = ctx.message.channel
-    if x["cod"] != "404":
-    	async with channel.typing():
-            y = x["main"]
-            current_temperature = y["temp"]
-            current_temperature_celsiuis: str = str(round(current_temperature - 273.15))
-            current_pressure = y["pressure"]
-            current_humidity = y["humidity"]
-            z = x["weather"]
-            weather_description = z[0]["description"]
-            embed = discord.Embed(title=f"Weather in {city_name}",
-                                  color= 0x55e4ff,
-                                  timestamp=ctx.message.created_at, )
-            embed.add_field(name="Descripition", value=f"**{weather_description}**", inline=False)
-            embed.add_field(name="Temperature(C)", value=f"**{current_temperature_celsiuis}°C**", inline=False)
-            embed.add_field(name="Humidity(%)", value=f"**{current_humidity}%**", inline=False)
-            embed.add_field(name="Atmospheric Pressure(hPa)", value=f"**{current_pressure}hPa**", inline=False)
-            embed.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtNzjujcX3qiXBNyL7fFdmzRCG6hEc7eZkmw&usqp=CAU")
-            embed.set_footer(text=f"Requested by {ctx.author.name}")
-            await channel.send(embed=embed)
-    elif not x["cod"] != "404":
-    	embed = discord.Embed(description="The following city was not found `due to wrong spelling of city` ")
-    	await ctx.message.delete()
-    	await asyncio.sleep(1)
-    	await channel.send(embed=embed)
-       
 #fun commands
 
 @client.command(aliases=["k"])

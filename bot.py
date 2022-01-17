@@ -719,21 +719,7 @@ async def truth(ctx):
 		"What’s the longest you’ve ever had an overdue library book ?",
 		"Would you eat a piece of pizza out of the trash ?",
 		"Have you ever thrown up on a roller coaster ?",
-		"Have you ever blamed your fart on someone else ?",
-		
-
-
-
-
-
-
-
-
-
-
-
-
-		]
+		"Have you ever blamed your fart on someone else ?",	]
     embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xFF0000)
     await ctx.reply(embed = embed, mention_author=False
 

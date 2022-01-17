@@ -59,7 +59,7 @@ async def snipe(ctx):
 @client.group(invoke_without_command=True)
 async def help(ctx):
 	async with ctx.typing():
-		embed = discord.Embed(title="kan",description="USE `kan` (command) so it will Extended functionality" ,color=0xF8E3EC)
+		embed = discord.Embed(title="kan",description="USE `kan` (command) so it will Extended functionality" ,color=0xFF0000)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantihide`,`announce`",inline = False)
 		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
@@ -75,7 +75,7 @@ async def help(ctx):
 
 @help.command()
 async def clean(ctx):
-	embed = discord.Embed(title="clean",description="Use this Command to clear messages",colour = 0x6cfd00 )
+	embed = discord.Embed(title="clean",description="Use this Command to clear messages",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanclean (ammount of number) or else will delete 2 messages")
 
@@ -84,7 +84,7 @@ async def clean(ctx):
 
 @help.command()
 async def lock(ctx):
-	embed = discord.Embed(title="lock",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
+	embed = discord.Embed(title="lock",description="Use this Command to lock a channel.",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanlock [aliases = l]")
 
@@ -92,35 +92,35 @@ async def lock(ctx):
 
 @help.command()
 async def unlock(ctx):
-	embed = discord.Embed(title="unlock",description="Use this Command to unlock a channel..",colour = 0x6cfd00 )
+	embed = discord.Embed(title="unlock",description="Use this Command to unlock a channel..",colour = 0xFF0000 )
 	embed.add_field(name ="**command**", value = "kanunlock [aliases = ul]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def lockvc(ctx):
-	embed = discord.Embed(title="lockvc",description="Use this Command to lock all vc of a guild",colour = 0x6cfd00 )
+	embed = discord.Embed(title="lockvc",description="Use this Command to lock all vc of a guild",colour = 0xFF0000 )
 	embed.add_field(name ="**command**", value = "kanlockvc [aliases = lvc]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unlockvc(ctx):
-	embed = discord.Embed(title="unlockvc",description="Use this Command to unlock all vc of a guild",colour = 0x6cfd00 )
+	embed = discord.Embed(title="unlockvc",description="Use this Command to unlock all vc of a guild",colour = 0xFF0000 )
 	embed.add_field(name ="**command**", value = "kanunlockvc [aliases = ulv]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def giverole(ctx):
-	embed = discord.Embed(title="Giverole",description="Use this Command to give someone specific role",colour = 0x6cfd00 )
+	embed = discord.Embed(title="Giverole",description="Use this Command to give someone specific role",colour = 0xFF0000 )
 	embed.add_field(name ="**command**", value = "kangiverole <mention_user/user_id> <role_id/mention_role> [aliases = gr]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def nickname(ctx):
-	embed = discord.Embed(title="nicknamee",description="Use this Command to change someone's nickname",colour = 0x6cfd00 )
+	embed = discord.Embed(title="nicknamee",description="Use this Command to change someone's nickname",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kannickname `mention the user or paste the id`")
 
@@ -128,7 +128,7 @@ async def nickname(ctx):
 
 @help.command()
 async def poll(ctx):
-	embed = discord.Embed(title="poll",description="Use this Command to Conduct a poll and ```poll is in yes and no```",colour = 0x6cfd00 )
+	embed = discord.Embed(title="poll",description="Use this Command to Conduct a poll and ```poll is in yes and no```",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanpoll ```event title```")
 
@@ -138,7 +138,7 @@ async def poll(ctx):
 
 @help.command()
 async def snipe(ctx):
-	embed = discord.Embed(title="snipe",description="Shows the last deleted message from a specified channel",color = 0x43ed35)
+	embed = discord.Embed(title="snipe",description="Shows the last deleted message from a specified channel",color = 0xFF0000)
 
 	embed.add_field(name ="**command**", value = "kansnipe")
 
@@ -163,7 +163,7 @@ async def  weather(ctx):
 
 @help.command()
 async def antilock(ctx):
-	embed = discord.Embed(title="antilock",description="Use this Command to lock all the channels.",colour = 0x6cfd00 )
+	embed = discord.Embed(title="antilock",description="Use this Command to lock all the channels.",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanantilock [aliases = al]")
 
@@ -171,7 +171,7 @@ async def antilock(ctx):
 
 @help.command()
 async def unantilock(ctx):
-	embed = discord.Embed(title="unantilock",description="Use this Command to unlock all the channels.",colour = 0x6cfd00 )
+	embed = discord.Embed(title="unantilock",description="Use this Command to unlock all the channels.",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanunantilock [aliases = unal]")
 
@@ -179,14 +179,14 @@ async def unantilock(ctx):
 
 @help.command()
 async def antihide(ctx):
-	embed = discord.Embed(title="antihide",description="Use this Command to hide all the channels.",colour = 0x6cfd00 )
+	embed = discord.Embed(title="antihide",description="Use this Command to hide all the channels.",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanantihide [aliases = ah]")
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unantihide(ctx):
-	embed = discord.Embed(title="unantihide",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
+	embed = discord.Embed(title="unantihide",description="Use this Command to lock a channel.",colour = 0xFF0000 )
 
 	embed.add_field(name ="**command**", value = "kanunantihide [aliases = unah]")
 
@@ -344,7 +344,7 @@ async def unhidec(ctx):
 @commands.has_permissions(manage_channels = True)
 async def lock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
-    embed = discord.Embed(description = ctx.channel.mention + "```went under lockdown mode 🔒 ```",color = 0x3bbf45)
+    embed = discord.Embed(description = ctx.channel.mention + "```went under lockdown mode 🔒 ```",color = 0xFF0000)
     msg = await ctx.send(embed = embed)
     await msg.add_reaction("✅")
     await ctx.message.delete()
@@ -354,7 +354,7 @@ async def lock(ctx):
 @commands.has_permissions(manage_channels=True)
 async def unlock(ctx):
     await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
-    embed = discord.Embed(description = ctx.channel.mention + "```Has removed the lockdown mode 🔓```" , color = 0x3bbf45)
+    embed = discord.Embed(description = ctx.channel.mention + "```Has removed the lockdown mode 🔓```" , color = 0xFF0000)
     msg = await ctx.send(embed = embed) 
     await msg.add_reaction("✅")
     await ctx.message.delete()
@@ -463,7 +463,7 @@ async def userinfo(ctx, member: discord.Member = None):
 @commands.has_permissions(kick_members =True)
 async def nickname(ctx, member: discord.Member, nick):
     await member.edit(nick=nick)
-    embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed",color = 0xF8E3EC)
+    embed = discord.Embed(description=f"✅ | Nickname of {member.mention} has been changed",color = 0xFF0000)
     await ctx.send(embed = embed)
     await ctx.message.delete()
     
@@ -478,7 +478,7 @@ async def announce(ctx,channel: discord.TextChannel,* ,msg):
 @commands.has_permissions(kick_members=True)
 async def poll(ctx,*,question):
     await ctx.channel.purge(limit=1)
-    embed = discord.Embed(description =f"{question}\n✅ = Yes\n❎ = No",colour = 0xFFF474)
+    embed = discord.Embed(description =f"{question}\n✅ = Yes\n❎ = No",colour = 0xFF0000)
     message = await ctx.send(embed = embed)
     await message.add_reaction('✅')
     await message.add_reaction('❎')
@@ -589,7 +589,7 @@ async def dare(ctx):
 		"Try to lick your elbow for the next three minutes.",
 		"Laugh out loud at everything the person to your left says until it’s your turn.",
 		"Stand up and try to break dance."]
-	embed = discord.Embed(description=f"{random.choice(dares)}",color =0xF8E3EC)
+	embed = discord.Embed(description=f"{random.choice(dares)}",color =0xFF0000)
 	await ctx.reply(embed=embed, mention_author=False)
 
 
@@ -734,7 +734,7 @@ async def truth(ctx):
 
 
 		]
-    embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xF8E3EC)
+    embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xFF0000)
     await ctx.reply(embed = embed, mention_author=False)
 
 
@@ -855,11 +855,11 @@ async def on_command_error(ctx,error):
 		await ctx.message.delete()
 		await ctx.send(embed = embed)
 	if isinstance(error,commands.MissingPermissions):
-		embed = discord.Embed(description="❌  | You are not able to use that command",color = 0xff0800)
+		embed = discord.Embed(description="❌  | You are not able to use that command",color = 0xFF0000)
 		await ctx.message.delete()
 		await ctx.send(embed = embed)
 	elif isinstance(error,commands.MissingRequiredArgument):
-		embed = discord.Embed(description="✅   |  Hey, provide a proper Arguments",color = 0x3bbf45)
+		embed = discord.Embed(description="✅   |  Hey, provide a proper Arguments",color = 0xFF0000)
 		await ctx.message.delete()
 		await ctx.send(embed = embed)
 

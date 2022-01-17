@@ -721,7 +721,7 @@ async def truth(ctx):
 		"Have you ever thrown up on a roller coaster ?",
 		"Have you ever blamed your fart on someone else ?",	]
     embed = discord.Embed(description =f"{random.choice(truth_list)}",color =0xFF0000)
-    await ctx.reply(embed = embed, mention_author=False
+    await ctx.reply(embed = embed, mention_author=False)
 
 #fun commands
 

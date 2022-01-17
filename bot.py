@@ -50,7 +50,7 @@ async def snipe(ctx):
         await ctx.send(embed = snipeEmbed)
     except:
     	embed = discord.Embed(description =f"There are no deleted messages in {ctx.channel.mention}",color = discord.Color.random())
-		await ctx.send(embed = embed)
+		await ctx.send(embed=embed)
         
 
 

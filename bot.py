@@ -14,7 +14,7 @@ from discord import FFmpegPCMAudio
 
 
 
-client = commands.Bot(command_prefix='k~',intents=discord.Intents.all())
+client = commands.Bot(command_prefix='kan',intents=discord.Intents.all())
 client.remove_command('help')
 client.launch_time = datetime.utcnow()
 api_key = "6beb4cf35bb9797f16db57512aaa1307"
@@ -24,7 +24,7 @@ base_url = "http://api.openweathermap.org/data/2.5/weather?"
 @client.event
 async def on_ready():
 
-	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"THAT YOU WILL USE | k~  FOR HELP "))
+	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"THAT YOU WILL USE | kan  FOR HELP "))
 
 	print("Kan is online")
 	
@@ -59,7 +59,7 @@ async def snipe(ctx):
 @client.group(invoke_without_command=True)
 async def help(ctx):
 	async with ctx.typing():
-		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xF8E3EC)
+		embed = discord.Embed(title="kan",description="USE `kan` (command) so it will Extended functionality" ,color=0xF8E3EC)
 		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantihide`,`announce`",inline = False)
 		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
@@ -77,7 +77,7 @@ async def help(ctx):
 async def clean(ctx):
 	embed = discord.Embed(title="clean",description="Use this Command to clear messages",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~clean (ammount of number) or else will delete 2 messages")
+	embed.add_field(name ="**command**", value = "kanclean (ammount of number) or else will delete 2 messages")
 
 	await ctx.send(embed = embed)
 
@@ -86,35 +86,35 @@ async def clean(ctx):
 async def lock(ctx):
 	embed = discord.Embed(title="lock",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~lock [aliases = l]")
+	embed.add_field(name ="**command**", value = "kanlock [aliases = l]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unlock(ctx):
 	embed = discord.Embed(title="unlock",description="Use this Command to unlock a channel..",colour = 0x6cfd00 )
-	embed.add_field(name ="**command**", value = "k~unlock [aliases = ul]")
+	embed.add_field(name ="**command**", value = "kanunlock [aliases = ul]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def lockvc(ctx):
 	embed = discord.Embed(title="lockvc",description="Use this Command to lock all vc of a guild",colour = 0x6cfd00 )
-	embed.add_field(name ="**command**", value = "k~lockvc [aliases = lvc]")
+	embed.add_field(name ="**command**", value = "kanlockvc [aliases = lvc]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unlockvc(ctx):
 	embed = discord.Embed(title="unlockvc",description="Use this Command to unlock all vc of a guild",colour = 0x6cfd00 )
-	embed.add_field(name ="**command**", value = "k~unlockvc [aliases = ulv]")
+	embed.add_field(name ="**command**", value = "kanunlockvc [aliases = ulv]")
 
 	await ctx.send(embed = embed)
 
 @help.command()
 async def giverole(ctx):
 	embed = discord.Embed(title="Giverole",description="Use this Command to give someone specific role",colour = 0x6cfd00 )
-	embed.add_field(name ="**command**", value = "k~giverole <mention_user/user_id> <role_id/mention_role> [aliases = gr]")
+	embed.add_field(name ="**command**", value = "kangiverole <mention_user/user_id> <role_id/mention_role> [aliases = gr]")
 
 	await ctx.send(embed = embed)
 
@@ -122,7 +122,7 @@ async def giverole(ctx):
 async def nickname(ctx):
 	embed = discord.Embed(title="nicknamee",description="Use this Command to change someone's nickname",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~nickname `mention the user or paste the id`")
+	embed.add_field(name ="**command**", value = "kannickname `mention the user or paste the id`")
 
 	await ctx.send(embed = embed)
 
@@ -130,7 +130,7 @@ async def nickname(ctx):
 async def poll(ctx):
 	embed = discord.Embed(title="poll",description="Use this Command to Conduct a poll and ```poll is in yes and no```",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~poll ```event title```")
+	embed.add_field(name ="**command**", value = "kanpoll ```event title```")
 
 	await ctx.send(embed = embed)
 
@@ -140,7 +140,7 @@ async def poll(ctx):
 async def snipe(ctx):
 	embed = discord.Embed(title="snipe",description="Shows the last deleted message from a specified channel",color = 0x43ed35)
 
-	embed.add_field(name ="**command**", value = "k~snipe")
+	embed.add_field(name ="**command**", value = "kansnipe")
 
 	await ctx.send(embed = embed)
 
@@ -149,7 +149,7 @@ async def snipe(ctx):
 async def meme(ctx):
 	embed = discord.Embed(title="MEME",description="use this command to create random meme", color = discord.Color.random())
 
-	embed.add_field(name ="**command**", value = "k~meme")
+	embed.add_field(name ="**command**", value = "kanmeme")
 
 	await ctx.send(embed = embed)
 
@@ -157,7 +157,7 @@ async def meme(ctx):
 async def  weather(ctx):
 	embed = discord.Embed(title="Weather",description="use this command to know the weather of any `city in the world`", color = discord.Color.random())
 
-	embed.add_field(name ="**command**", value = "k~weather , example: k~weather (`city name`)")
+	embed.add_field(name ="**command**", value = "kanweather , example: k~weather (`city name`)")
 
 	await ctx.send(embed = embed)
 
@@ -165,7 +165,7 @@ async def  weather(ctx):
 async def antilock(ctx):
 	embed = discord.Embed(title="antilock",description="Use this Command to lock all the channels.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~antilock [aliases = al]")
+	embed.add_field(name ="**command**", value = "kanantilock [aliases = al]")
 
 	await ctx.send(embed = embed)
 
@@ -173,7 +173,7 @@ async def antilock(ctx):
 async def unantilock(ctx):
 	embed = discord.Embed(title="unantilock",description="Use this Command to unlock all the channels.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~unantilock [aliases = unal]")
+	embed.add_field(name ="**command**", value = "kanunantilock [aliases = unal]")
 
 	await ctx.send(embed = embed)
 
@@ -181,14 +181,14 @@ async def unantilock(ctx):
 async def antihide(ctx):
 	embed = discord.Embed(title="antihide",description="Use this Command to hide all the channels.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~antihide [aliases = ah]")
+	embed.add_field(name ="**command**", value = "kanantihide [aliases = ah]")
 	await ctx.send(embed = embed)
 
 @help.command()
 async def unantihide(ctx):
 	embed = discord.Embed(title="unantihide",description="Use this Command to lock a channel.",colour = 0x6cfd00 )
 
-	embed.add_field(name ="**command**", value = "k~unantihide [aliases = unah]")
+	embed.add_field(name ="**command**", value = "kanunantihide [aliases = unah]")
 
 	await ctx.send(embed = embed)
 
@@ -197,7 +197,7 @@ async def unantihide(ctx):
 async def ping(ctx):
 	embed = discord.Embed(title="PING",description="Use this command to check your ping", color = discord.Color.purple())
 
-	embed.add_field(name ="**command**", value = "k~ping")
+	embed.add_field(name ="**command**", value = "kanping")
 
 	await ctx.send(embed = embed)
 
@@ -205,7 +205,7 @@ async def ping(ctx):
 async def announce(ctx):
 	embed = discord.Embed(title="ANNOUNCEMENT",description="Use this command to do announcement", color = discord.Color.purple())
 
-	embed.add_field(name ="**command**", value = "k~announce then mention channel and then message done .. [aliases : anounc]")
+	embed.add_field(name ="**command**", value = "kanannounce then mention channel and then message done .. [aliases : anounc]")
 
 	await ctx.send(embed = embed)
 
@@ -214,7 +214,7 @@ async def announce(ctx):
 @help.command()
 async def say(ctx):
 	embed = discord.Embed(title="SAY",description="Use this command to say in embed", color = discord.Color.random())
-	embed.add_field(name ="**command**", value = "k~say (your text)")
+	embed.add_field(name ="**command**", value = "kansay (your text)")
 
 
 	await ctx.send(embed = embed)
@@ -222,7 +222,7 @@ async def say(ctx):
 @help.command()
 async def serverinfo(ctx):
 	embed = discord.Embed(title="SERVER INFO",description="Use this command to see info of server", color = discord.Color.random())
-	embed.add_field(name ="**command**", value = "k~serverinfo")
+	embed.add_field(name ="**command**", value = "kanserverinfo")
 
 
 	await ctx.send(embed = embed)
@@ -230,7 +230,7 @@ async def serverinfo(ctx):
 @help.command()
 async def userinfo(ctx):
 	embed = discord.Embed(title="USER INFO",description="Use this command to see someones or else your info", color = discord.Color.random())
-	embed.add_field(name ="**command**", value = "k~userinfo ``mention the person or else add his id``  or Aliases ``k~whois``") 
+	embed.add_field(name ="**command**", value = "kanuserinfo ``mention the person or else add his id``  or Aliases ``k~whois``") 
 
 	await ctx.send(embed = embed)
 
@@ -238,7 +238,7 @@ async def userinfo(ctx):
 @help.command(aliases=["truth&dare"])
 async def td(ctx):
 	embed = discord.Embed(title="TRUTH & DARE ",description="Use this command to play game of truth and dare", color = discord.Color.random())
-	embed.add_field(name ="**command**", value = "k~truth,Aliases('t') `for truth Qustions` and k~dare,Aliases('d') `for dare Questions`") 
+	embed.add_field(name ="**command**", value = "kantruth,Aliases('t') `for truth Qustions` and k~dare,Aliases('d') `for dare Questions`") 
 
 	await ctx.send(embed = embed)
 

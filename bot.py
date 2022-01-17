@@ -26,7 +26,7 @@ async def on_ready():
 
 	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"THAT YOU WILL USE | k~  FOR HELP "))
 
-	print("Kan4me is online")
+	print("Kan is online")
 	
 
 
@@ -60,7 +60,7 @@ async def snipe(ctx):
 async def help(ctx):
 	async with ctx.typing():
 		embed = discord.Embed(title="kan4me",description="USE `k~` (command) so it will Extended functionality" ,color=0xF8E3EC)
-		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantihide`",inline = False)
+		embed.add_field(name = "🛡️ | MODERATION", value = "`clean`,`lock`,`unlock`,`nickname`,`poll`,`lockvc`,`unlockvc`,`giverole`,`antilock`,`unantilock`,`antihide`,`unantihide`,`announce`",inline = False)
 		embed.add_field(name = "✍| GENERAL COMMAND", value = "`snipe`, `ping`,`say`,`weather`")
 		embed.add_field(name = "🎮 | GAMES", value = "`truth&dare(td)`",inline = False)
 		embed.add_field(name = "😀 | FUN", value = "`meme`")
@@ -198,6 +198,14 @@ async def ping(ctx):
 	embed = discord.Embed(title="PING",description="Use this command to check your ping", color = discord.Color.purple())
 
 	embed.add_field(name ="**command**", value = "k~ping")
+
+	await ctx.send(embed = embed)
+
+@help.command()
+async def announce(ctx):
+	embed = discord.Embed(title="ANNOUNCEMENT",description="Use this command to do announcement", color = discord.Color.purple())
+
+	embed.add_field(name ="**command**", value = "k~announce then mention channel and then message done .. [aliases : anounc]")
 
 	await ctx.send(embed = embed)
 

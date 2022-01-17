@@ -761,7 +761,7 @@ async def weather(ctx, *, city: str):
             embed.add_field(name="Temperature(C)", value=f"**{current_temperature_celsiuis}°C**", inline=False)
             embed.add_field(name="Humidity(%)", value=f"**{current_humidity}%**", inline=False)
             embed.add_field(name="Atmospheric Pressure(hPa)", value=f"**{current_pressure}hPa**", inline=False)
-            embed.set_thumbnail(url="https://cdn.dribbble.com/users/14997/screenshots/2289232/open-uri20151013-3-1iyvn1b")
+            embed.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtNzjujcX3qiXBNyL7fFdmzRCG6hEc7eZkmw&usqp=CAU")
             embed.set_footer(text=f"Requested by {ctx.author.name}")
             await channel.send(embed=embed)
     elif not x["cod"] != "404":

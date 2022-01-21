@@ -383,13 +383,6 @@ async def antihide(ctx):
         
 
 
-@client.command()
-async def join(ctx):
-    channel = ctx.author.voice.channel
-
-    await ctx.author.voice.channel.connect()
-    await ctx.guild.change_voice_state(channel=channel, self_deaf=True)
-
 
 
 @client.command(aliases=["unah"])

@@ -28,12 +28,6 @@ async def on_ready():
 
 	print("Kan is online")
 	
-@client.command()
-async def join(ctx):
-    channel = ctx.author.voice.channel
-
-    await ctx.author.voice.channel.connect()
-    await ctx.guild.change_voice_state(channel=channel, self_deaf=True)
 
 
 #help commands
@@ -387,6 +381,15 @@ async def antihide(ctx):
         await channel.set_permissions(ctx.guild.default_role, view_channel=False)
         await msg.add_reaction("<a:HomerHide:930942071110533142>")
         
+
+
+@client.command()
+async def join(ctx):
+    channel = ctx.author.voice.channel
+
+    await ctx.author.voice.channel.connect()
+    await ctx.guild.change_voice_state(channel=channel, self_deaf=True)
+
 
 
 @client.command(aliases=["unah"])

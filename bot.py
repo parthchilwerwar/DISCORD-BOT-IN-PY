@@ -781,16 +781,13 @@ async def slap(ctx):
 async def on_command_error(ctx,error):
 	if isinstance(error ,CommandNotFound):
 		embed = discord.Embed(tittle=f"Command",description="❌  | You have used wrong command so, use `k~help` to get help! Thank You",color = 0xff0800)
-		await ctx.message.delete()
-		await ctx.send(embed = embed)
+		await ctx.reply(embed = embed,mention_author=False)
 	if isinstance(error,commands.MissingPermissions):
 		embed = discord.Embed(description="❌  | You are not able to use that command",color = 0xFF0000)
-		await ctx.message.delete()
-		await ctx.send(embed = embed)
+		await ctx.reply(embed = embed,mention_author=False)
 	elif isinstance(error,commands.MissingRequiredArgument):
 		embed = discord.Embed(description="✅   |  Hey, provide a proper Arguments",color = 0xFF0000)
-		await ctx.message.delete()
-		await ctx.send(embed = embed)
+		await ctx.reply(embed = embed,mention_author=False)
 
 
 

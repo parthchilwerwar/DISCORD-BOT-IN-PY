@@ -383,8 +383,6 @@ async def antihide(ctx):
         
 
 
-
-
 @client.command(aliases=["unah"])
 @commands.has_permissions(manage_channels = True)
 async def unantihide(ctx):

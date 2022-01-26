@@ -454,7 +454,7 @@ async def announce(ctx,channel: discord.TextChannel,* ,msg):
 @commands.has_permissions(kick_members=True)
 async def poll(ctx,*,question):
     await ctx.channel.purge(limit=1)
-    embed = discord.Embed(description =f"{question}\n✅ = Yes\n❎ = No",colour = 0xFF0000)
+    embed = discord.Embed(description =f"{question}\n✅ = Yes\n\n❎ = No",colour = 0xFF0000)
     message = await ctx.send(embed = embed)
     await message.add_reaction('✅')
     await message.add_reaction('❎')

@@ -24,7 +24,7 @@ base_url = "http://api.openweathermap.org/data/2.5/weather?"
 @client.event
 async def on_ready():
 
-	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"THAT YOU WILL USE | kan  FOR HELP "))
+	await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"FOR HELP USE `kan` "))
 
 	print("Kan is online")
 	

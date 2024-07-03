@@ -791,4 +791,4 @@ async def on_command_error(ctx,error):
 
 
 
-client.run("YOUR TOKEN")
+client.run("YOUR_TOKEN")

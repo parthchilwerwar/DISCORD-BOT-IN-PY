@@ -17,8 +17,8 @@ from discord import FFmpegPCMAudio
 client = commands.Bot(command_prefix='kan',intents=discord.Intents.all())
 client.remove_command('help')
 client.launch_time = datetime.utcnow()
-api_key = "6beb4cf35bb9797f16db57512aaa1307"
-base_url = "http://api.openweathermap.org/data/2.5/weather?"
+api_key = "YOUR WEATHER API KEY"
+base_url = "WEATHER API KEY"
 
 
 @client.event

@@ -5,6 +5,7 @@ import requests
 from datetime import datetime
 import json
 import random
+import pillow 
 import asyncio
 from pyrandmeme import *
 import time
